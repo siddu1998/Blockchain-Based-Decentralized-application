@@ -1,0 +1,18 @@
+-------------------------------------
+|      D-APP Voting Application		|
+-------------------------------------			
+|Sai Siddartha Maram				|
+|Thapar University					|
+------------------------------------|									
+|Tutorial : Suraj Raval Youtube		|
+-------------------------------------
+
+Step 1 : Setting yo environment
+step 2 : Creating a voting smart contract
+Step 3 : interacting with the contract via the nodejs console
+step 4 : Creating GUI interface
+
+
+Dapp consists 
+
+of [HTML/CSS/JavaScript-->web3.js]-->which in turn interacts with the blockchain here Ethereuem virtual Machine(evm) 

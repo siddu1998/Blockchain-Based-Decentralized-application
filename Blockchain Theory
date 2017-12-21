@@ -1,0 +1,234 @@
+
+
+--------------------
+|BLOCKCHAIN NOTES   |
+--------------------
+SAI SIDDARTHA MARAM
+Thapar University
+
+
+
+
+
+CURRENT BANKING PROBLEMS
+-------------------------------
+centralized power 			--> Blockchain uses distributed ledger 
+
+
+personalized ledgers 		-->        everyone a part of the blockchain recieves a copy of the ledger --> still u are clueless about the 											transaction 
+
+
+prone to hacks 				-->   a transaction can not be hacked --> any manipulation causes rejection of the entry into the blockchain ledger 
+
+
+
+double spening				-->  if transaction digital signature is same then a sum of 100 rupees is sent to 2 people which is accounted for 								   200.
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+
+Lol...to change a modify a transaction it will cost half of all the bitcoins available. 
+No transaction charges, since there is not third party involved. Transaction is done with the help of miners and miners develop 12.5 bitcoins per transaction (Note this is not a transaction fee. this 12.5 bitcoins are mined bitcoins. i.e u facilitate a transaction ur allowed to mine.)
+
+
+Block--> the set of all details involved with transaction
+chain--> set of blocks in the form a blockchain
+
+21 million bitcoins --> Community make sures that the system/algos are upgraded in such a way that despite the increase in the number of bitcoin miners the net market flow is still restricted to 21 million of the bitcoins.
+
+
+
+---------------------------------------------------------------------------------
+|  										BLOCK COMPONENTS						|	
+---------------------------------------------------------------------------------
+HASH --> This can not be reverse engineered 
+every transaction has an unique hash
+
+proof of work or value ---> Mathematical work required to facilitate transaction
+ledger can not be manipulated ---> Mathematical problem is solved --> to develop a hash
+if one ledger is modified it is cross checked with the other ledgers if difference is found that particular ledger is thrown out of the blockchain
+------------------------------------------------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+|						ROUGH WORKING MODEL										|
+---------------------------------------------------------------------------------
+
+Unlike centralized banks where account balance based information is stored. i.e
+
+example ::
+
+Id 	balanace
+
+1   1000
+2   2000
+3   4999
+
+
+Such storage leads to end to end loss of information. i.e a particular person is vunarable to attact
+
+
+blockchain on the other hand has transaction based ledger 
+
+Assume A,B,C with initially 100 (Mined),0,0
+
+Transaction ID      balance
+
+
+A->B 				100              -----> This implies A-100 and B+100
+B->A | B->C 		100     		 ------> This is double spending i.e B only having 100 is trying to transfer 100,100 to A,C this will not be allowed by miners. So basically a miners role is to verify the balance based on the transactions. Here a miners sees and notices that B only has recieved an amount of 100 and the miner will facilitate B->A but while B->C he will notice that A->B B+100=100 and B->A b-100=0 and that B has no balance and will not faciliate B->C
+----------------------------------------------------------------------------
+
+-----------------------------
+| WHY DO MINERS EVEN VALITATE |
+-----------------------------
+Miners gain 12.5 BTC for every validation they get..
+mining is tough it takes up a lot of resources 
+33000 --> 11 people --> 3000 dollars each
+Everyone can become a miner
+it involves a lot of complexity and power.
+
+-----------------------
+Blockchain and Bitcoin|
+-----------------------
+
+**Request for transaction --> Ledger update request is made --> 
+  Miners verify the transaction if validated --> update ledgers --> and the block is added to the blockchain
+  if not validated --> dont update ledger and discard transaction
+
+
+
+Blockchain --> Private Key + P2P network + Blockchain Program
+
+
+-------------------
+Private Key crypto | =  Public Key + private key
+------------------
+** Public key --> Account number.
+** if we use public key to encrpty then private decrypts and then vice versa happens! (This are called asymetric keys)
+** what key to use for encryption depends on the data being shared.
+-----
+P2P | Helps to maintain consistency in the ledger
+-----
+**Digital Ledger technology --> encrypted ledger
+**once u enter a blockchain u get a copy of all the set of transactions till date
+**Suppose B->C 5 coins miner(A) finds this transaction and feciliates it. This transaction is propgated throught all the nodes say D is cunning and registers the transaction B->D. But brfore the update there is majority and minority factor the majority( unaltered transaction is then updated in all the ledgers.)
+
+** even if one ledger is corrupted then he/she can borrow from peers 
+
+** if your thinking i will form a team and make it majority then listen! there are a more than 1 million miners and for a transaction to register you need atleast 50% people to come up with the same details which is not possible
+----------------------
+Digital Signature  P2P|
+----------------------
+A transaction can be treated as a document this document contains 
+a) Sender public key
+b) Reciever Public Key
+c) Amount
+
+a,b,c are put in hash function and hased code is obtained
+
+this hash code is locked by a private key(sender) which is sent over a network This locking is called Digital Signature!
+
+a validater recieves this first the public key opens the lock then a hash function opens the data and output some hashed value
+the document is also de-hashed and we obtain some code
+if code= hashed value(from public key)
+the transaction is treated as valid and registered
+
+
+
+
+------------
+Blockchain can be implemented in anuy language --> famous is solidity --> can be used in all fields and domains across the globe.
+
+Miners solve a complex mathematical puzzle and verifys the transaction. Once the transaction is verified he maintains and updates the ledger as well. 
+
+Mathematical Principle
+-----------------------
+ ensures that the nodes automatically and continuously agree to the current state of the ledger and every transactionin in it.
+
+ if anyone attempts to corrupt a transaction the nodes will not arrive at a agrrement and refuse to accept the transaction in the blockchain.
+
+
+
+ Blockchain is of three types
+
+ Public --> WorldWide example (GoEthereum,Bitcoin)
+ 
+
+ Private --> Master Slave Arch (One master)
+ that is only one miner is there. i.e only one person can add blocks into the blockchain
+
+
+ Consrtium --> Group of masters 
+ that is a group of persons can add blocks into the blockchain.
+
+ combinations can be implemented!
+ i.e Private + Public etc.
+
+---------------------
+BlockChain Usecases	|
+---------------------
+Banking
+
+Accounting
+
+Payments
+
+healthcare 	--> Storage of patient details
+			--> Just imagine all the patient details of the country in a single blockchain
+			-->	No more files and shit all the doctor has to do is get the patients public key and all the data the doctor needs will be sent
+			--> Here transaction is not money but patient details
+
+Law enforcements -->Criminal Database 
+
+Election and Voting 
+					--> Serious applications
+					--> what is voting! Register voter (Public key for citizen)
+					--> voter marks vote only once 	(terminate public key once vote is caste)
+					--> No manipulation i.e rigging since leadger entries can not be manipulated!
+
+
+
+
+
+IOT 				--> Each transfer of data among IoT connected devices can use blockchain
+
+realestate			--> Property belonging can be stored in blockchain data...transfer of property is a transaction 
+					--> No more political Kabsa :-)
+
+AND MANY MORE!
+
+----------------------------------------------------
+**Bitcoin transaction generally are free of transaction charges the only reason if we need to make our tranaction a priority we can pay the miners a certain incentive or transaction charge (optional)
+
+**hahaha...no bank calls! Lol...
+
+**Public Id is individuals identity but remember these are hashed stuff so we can not trace back. i.e ur still hidden nigga!
+
+-----------------------------------------------------
+
+Ethereum Demo
+--------------
+We will make a bank using Blockchain (Etheruem Blockchain)
+
+1. We will make our own cryptocurrency with fixed markt supply and tokens to represent real world asset values
+
+2. Create autonomous private blockchain with rules spending money
+
+3. Mine for new eather by validating transactions 
+
+--> Dummy transactions will be made 
+
+---------------------------
+Installing Go Ethereum     |
+---------------------------
+**Install go 
+**set up variables in bash follow git repos to  set up Go-ethereum in kali
+** initizlize genesis file --> genesis file defines the structure of each block in the blockchain
+**./geth --datadir ~/root/go-ethereum/genesis/genesis3.json --port 30304
+** before using the above commad ake sure ur in the goethereum foldre-->build-->bin 
+** breaking down the command ./geth is an operation to mine at --datadirectory ---path with structure genesis3.json (this json is avilable  on  the git page (official go-ethereum application))
+** now we need the go-ethereum console to run operations
+** personal.account()
+create new account
+** more commands available on the internet
+
+--->Yipee! so i have completed setting up a bank on my computer--> P.S this sucks real time because everything is being done in cmd which is not user friendly so in the coming days we will make sure we use some kind of web interface to build the applications. 
