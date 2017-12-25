@@ -1,0 +1,95 @@
+Symmetric Encrytion and Asymmetric encryption
+----------------------------------------------
+Symmetric encruption 
+original text --> Symmetric key --> ciphertext --> same symetric key to decode the cipher text.
+Since same key is used to encrypt and decrypt it is called symmetric encryption.
+
+the problem with this is self explanatory!
+
+Asymmetric Encryption
+----------------------
+Sharing of a common mailbox...i.e others can not see others mail in the mailbox.
+
+
+RSA Algorithm
+---------------
+Alice has private key and private key
+Bob also has private key and private key
+
+You can not the other key having one key!
+Public Key us avilable to everyone.
+
+document (which is being sent): private key (alice) + public key(alice)+ public key(BOBS)
+now since the document contains Bobs public key this document can be opened only by BOB since he has the corespondin private key!
+So even if someone else steals the document he wont have the private key of BoB!
+
+Cryptocurrency --> Uses Peer to Peer security protocol.
+
+SHA256 Hash
+-----------------------------------
+It represents fingerprint of some digital data.
+even empty data has Hash! i.e unique finger print.
+it is difficult to decrypt!
+
+Block
+-----------------------------------
+A simple block conatins a block number + Nonce + Data
+the entire block is converted into a unique hash
+A block which generates a hash with a particular requirment. Once the requirment (A simple requiement for example is that the ha must start with 0000) is satisfied it is called signed Block.
+
+but we dont want to change the data we want to send and the block number also cant be changed it has to be unique. so the only thing that can be changed is the Nonce. So what we do is we keep the data as per our need. the block number is unique we keep changing the nonce number till we match the hash requirments and the block becomes a signed block.
+
+The above is where mining coming into the picture. The Nonce has to be checked itiratively till the conditions are satisfied. Mining is this! there is immense complexity involved in getting the correct nonce. it takes a hell amount of time to get the nonce right.
+
+Then what the fish is blockchain
+---------------------------------
+Simple it is a chain of blocks ;-) Lets dig deeper!
+
+Now we wll add another element in the block i.e Block number + nonce + data + prev + Hash
+So why do we need the prev value.. The pre value stores the hash value of the exactly previous value :-) (sweet).
+this is how the block has been chained. the first block has some random number since it has nothing to refer to.
+
+Any change in the data causes the block to change its current hash! and this effects the immediate block (prev changes) and so on since the prev also changes and all hash requirments are smashed!.
+
+If you change the data the block's hash also changes and hence we need to remine to get hash to get an hash to satify the requirments.
+
+In simple words blockchain resists a change in the the blocks. A single change in the block effects all the blocks and all the blocks need to be remined! So this is what make block chain sexy! it is asummed in a blockchain on million you would need all the super computers 100% computation power to manipulate the data! since once change means remine all the blocks ! 
+
+
+Distributed Blockchain
+---------------------------
+the question is how do we know if the blockchian was remined! 
+Say we have two peers, Peer A has a copy of blockchain
+					   Peer B has a copy of blockchain
+to check if the blockchain is same -> if the corresponding blocks in peer A and peer B have same hashes we can say that Peer A,B have the copy of same blockchain!.
+
+In real life there exist many such peers. a change in one peers blockchain will not alter the other Peers blockchain. 
+Suppose in A/B/C peers B has manipulated data and remined 
+now all blockchains are valid (B was remined) To decide what is correct we give vote rights to A/B/C we see A/C they agree on one data and B wont but majority is with A/C so this will be treated correct and B will be forced to adapt the A/C blockchain.
+
+Blocks Data
+----------------------------------
+Data needs to be cool! Data can be critical
+We will call data from now as token
+So 
+our block will have the following components
+Block Number + Nonce + Tx (token) + Prev + Hash
+
+The Tokens here say contain transactions which are being made a transaction for ex : $25 from:andy -> to:mary
+
+Block Validation
+-----------------
+Since the data stored did not contain any acount number etc. How do we know if the sender has that amount of money.
+
+Let us add a new component to our block
+
+Block Number + Nonce + coinbase + tokens + prev +hash
+Coinbase : It contains the money generated initially out of nowhere
+All the previous transactions are checked and based on the total transactions done i.e amount recieved/given/coinbase_generation the current net worth is calculated and it the net-worth is more than than amount to be sent currently it is okay else transaction is rejected. 
+
+
+
+
+
+
+
